@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+
+<body>
+    <div class="header_dash">
+        <h1>24/7 Workout</h1>
+        <div class="mini_header">
+            <h4>{{user.first_name}} {{user.last_name}}</h4>
+            <a href="/workouts"><button>Dashboard</button></a>
+            <a href="/logout"><button>Logout</button></a>
+        </div>
+    </div>
+    <br>
+
+    <h3>{{workout.location}} on {{workout.date}}</h3>
+    <br>
+    <label for="posted_by"><b> Posted by:</b> {{workout_with_author.creator.first_name}}
+        {{workout_with_author.creator.last_name}}</label>
+
+    <br>
+    <br>
+    <div class="the_sighting">
+        <label for="field2" class="text-blue"><b>What happened:</b>
+            <br>
+            <br>
+             {{workout.what_happen}}</label>
+        <br>
+        <br>
+        <label for="field2" class="text-black">Number of Sasquatches: {{workout.number_of_sasquatches}}</label>
+        <br>
+        
+        <br>
+        <label for="field2" class="text-black"><b>Reported by:{{workout_with_author.creator.first_name}}
+            {{workout_with_author.creator.last_name}}</b> </label>
+    </div>
+
+</body>
+
+</html>

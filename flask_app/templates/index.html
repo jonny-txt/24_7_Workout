@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+</head>
+
+<body>
+    <h1>24/7 Workout</h1>
+    <div class="container_regandlog">
+
+
+        <div class="register_box">
+            <form action="/register" class="card mx-auto bg-dark p-5 my-5 " method="POST">
+                {% with messages = get_flashed_messages(category_filter=['register']) %}
+                {% if messages %}
+                {% for message in messages %}
+                <p style="color: red">{{message}}</p>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <h2 class="text-primary text-center">Register</h2>
+                <label for="field1" class="text-white">First Name:</label>
+                <input type="text" name="first_name" class="form-control">
+                <br>
+                <label for="field2" class="text-white">Last Name:</label>
+                <input type="text" name="last_name" class="form-control">
+                <br>
+                <label for="field2" class="text-white">Email:</label>
+                <input type="text" name="email" class="form-control">
+                <br>
+                <label for="field2" class="text-white">Password:</label>
+                <input type="password" name="password" class="form-control">
+                <br>
+                <label for="field2" class="text-white">Confirm Password:</label>
+                <input type="password" name="confirm_password" class="form-control">
+                <br>
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </form>
+        </div>
+
+
+        <div class="login_box">
+            <form action="/user/login" class="card mx-auto bg-dark p-5 my-5" method="POST">
+                {% with messages = get_flashed_messages(category_filter=['login']) %}
+                {% if messages %}
+                {% for message in messages %}
+                <p style="color: red">{{message}}</p>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <h2 class="text-success text-center">Login</h2>
+                <label for="field2" class="text-white">Email:</label>
+                <input type="text" id="field1" name="email">
+                <br>
+                <label for="field2" class="text-white">Password:</label>
+                <input type="password" id="field1" name="password" required>
+                <br>
+                <input type="submit" value="Submit" class="btn btn-success">
+            </form>
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>

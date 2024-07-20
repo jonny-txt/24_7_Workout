@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+
+<body>
+    <div class="header_dash">
+        <h1>24/7 Workout</h1>
+        <div class="mini_header">
+            <h4>{{user.first_name}} {{user.last_name}}</h4>
+            <a href="/workouts/new"><button>Report a Workout</button></a>
+            
+            <a href="/logout"><button>Logout</button></a>
+        </div>
+    </div>
+
+    <h5>Reported Workout</h5>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Location</th>
+                <th>Date / Reported By</th>
+                <th>Actions</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for workout in all_workouts %}
+            
+            <tr>
+                <td>{{workout.location}} <br>
+                    <label for="">Skeptics:</label>{{workout.number_of_sasquatches}}
+                </td>
+
+                <td>Date of workout: {{workout.date}} <br>
+                    Reported by: {{workout.creator.first_name}} {{workout.creator.last_name}}
+                </td>
+
+                
+                <td><a href="/workout/view/{{workout.id}}">View</a>
+                    {%if user.first_name == workout.creator.first_name %}
+                    |<a href="/workout/edit/{{workout.id}}"> Edit </a>|
+                    <a href="/workout/delete/{{workout.id}}"> Delete </a>
+                </td>
+                    {%endif%}
+               
+
+               
+            </tr>
+                
+                            
+
+            {%endfor%}
+        </tbody>
+
+    </table>
+
+
+</body>
+
+</html>
