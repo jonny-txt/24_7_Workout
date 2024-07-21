@@ -48,9 +48,9 @@
                         <div class="mini_header">
                             <h4>{{user.first_name}} {{user.last_name}}</h4>
                             <br>
-                            <a href="/workouts/new"><button>Report a Workout</button></a>
+                            <a href="/workouts/new"><button class="btn btn-primary">Report a Workout</button></a>
 
-                            <a href="/logout"><button>Logout</button></a>
+                            <a href="/logout"><button class="btn btn-primary">Logout</button></a>
                         </div>
                     </div>
                     <br>
@@ -66,7 +66,7 @@
                             {% for workout in all_workouts %}
                             <tr>
                                 <td>{{workout.location}} <br>
-                                    <label for="">Skeptics:</label>{{workout.number_of_sasquatches}}
+                                    <label for="">Workouts:</label>{{workout.number_of_sasquatches}}
                                 </td>
                                 <td>Date of workout: {{workout.date}} <br>
                                     Reported by: {{workout.creator.first_name}} {{workout.creator.last_name}}

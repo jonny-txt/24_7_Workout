@@ -37,8 +37,30 @@ td {
     justify-content: space-between;
     width: 39px;
 }
-
-
+body {
+    background-image: url('../assets/img/bg-masthead.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+.centered-inline {
+    text-align: center;
+}
+.the_sighting {
+    margin-top: 20px;
+}
 
 
 
