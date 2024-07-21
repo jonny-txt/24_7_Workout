@@ -35,16 +35,12 @@ td {
     background-color: gainsboro;
     display: flex;
     justify-content: space-between;
-    width: 390px;
+    width: 39px;
 }
 
 
 
-.container_regandlog {
-    display: flex;
-    
-    justify-content: space-around;
-}
+
 
   
 .header, .header_dash {
