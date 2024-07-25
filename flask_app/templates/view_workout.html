@@ -1,43 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Details</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
-
+    <title>View Workout</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
-
-<body>
-    <div class="header_dash">
-        <h1>24/7 Workout</h1>
-        <div class="mini_header">
-            <h4>{{user.first_name}} {{user.last_name}}</h4>
-            <a href="/workouts"><button class="btn btn-primary">Dashboard</button></a>
-            <a href="/logout"><button class="btn btn-primary">Logout</button></a>
+<body class="main-background">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">24/7 Workout</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            </ul>
         </div>
+    </nav>
+    <div class="container content-wrapper">
+        <h1 class="text-center">View Workout</h1>
+        <p><strong>Date:</strong> {{ workout.date }}</p>
+        <p><strong>Details:</strong> {{ workout.details }}</p>
+        <p><strong>Category:</strong> {{ workout.category }}</p>
+        <p><strong>Duration:</strong> {{ workout.duration }} minutes</p>
     </div>
-    <br>
-    <div class="centered-container">
-        <h3>{{workout.location}} on {{workout.date}}</h3>
-        <br>
-        <label for="posted_by"><b> Posted by:</b> {{workout_with_author.creator.first_name}} {{workout_with_author.creator.last_name}}</label>
-        <br>
-        <br>
-        <div class="the_sighting">
-            <label for="field2" class="text-blue"><b>What happened:</b>
-                <br>
-                <br>
-                {{workout.what_happen}}</label>
-            <br>
-            <br>
-            <label for="field2" class="text-black">Number of Workouts: {{workout.number_of_sasquatches}}</label>
-            <br>
-            <br>
-            <label for="field2" class="text-black"><b>Reported by:{{workout_with_author.creator.first_name}} {{workout_with_author.creator.last_name}}</b> </label>
-        </div>
-    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.githubusercontent.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>

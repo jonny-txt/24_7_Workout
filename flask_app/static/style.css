@@ -1,0 +1,89 @@
+:root {
+    --color-dark: #1a1a1a;
+    --color-medium: #4a4a4a;
+    --color-light: #e0e0e0;
+    --color-white: #ffffff;
+    --color-highlight: #007bff;
+}
+
+body {
+    color: var(--color-light);
+    font-family: Arial, sans-serif;
+    background-color: var(--color-dark);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+body.main-background {
+    background-image: url('/static/images/bg-masthead.jpg');
+}
+
+body.login-background {
+    background-image: url('/static/images/bg-signup.jpg');
+}
+
+.navbar {
+    background-color: var(--color-medium) !important;
+}
+
+.nav-link, .navbar-brand {
+    color: var(--color-white) !important;
+    font-weight: bold;
+}
+
+.nav-link:hover, .navbar-brand:hover {
+    color: var(--color-highlight) !important;
+}
+
+.content-wrapper {
+    background-color: rgba(26, 26, 26, 0.8);
+    min-height: calc(100vh - 56px);
+    padding: 20px;
+}
+
+.card {
+    background-color: var(--color-medium);
+    border: none;
+    border-radius: 8px;
+}
+
+.btn-primary, .btn-info, .btn-warning, .btn-danger {
+    margin: 5px;
+}
+
+.btn-primary, .btn-info, .btn-warning, .btn-danger, .btn {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    border: none;
+    font-weight: bold;
+}
+
+.btn-primary:hover, .btn-info:hover, .btn-warning:hover, .btn-danger:hover, .btn:hover {
+    background-color: var(--color-highlight);
+    color: var(--color-white);
+}
+
+.table {
+    color: var(--color-light);
+    table-layout: auto;
+    word-wrap: break-word;
+}
+
+.table td, .table th {
+    white-space: normal !important;
+    word-wrap: break-word;
+}
+
+.form-control {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    border-color: var(--color-light);
+}
+
+.form-control:focus {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    border-color: var(--color-white);
+    box-shadow: 0 0 0 0.25rem rgba(224, 224, 224, 0.25);
+}
