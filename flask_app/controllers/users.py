@@ -35,9 +35,6 @@ def dashboard():
     user = User.get_user_by_id(data)
     workouts = Workout.get_all_workouts_by_user(session['user_id'])
     return render_template('dashboard.html', user=user, all_workouts=workouts)
-    print("User:", user.__dict__)
-    print("Workouts:", [workout.__dict__ for workout in workouts])
-    return render_template('dashboard.html', user=user, all_workouts=workouts)
 
 @app.route('/user/login', methods=['POST'])
 def login():
@@ -56,7 +53,6 @@ def login():
 @app.route('/logout')
 def logout():
     session.clear()
-    flash('Thank you for visiting', "login")
     return redirect('/')
 
 @app.route('/workouts/new')         
