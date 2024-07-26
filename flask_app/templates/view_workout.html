@@ -25,6 +25,17 @@
         </div>
     </nav>
     <div class="container content-wrapper">
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="alert alert-dismissible fade show">
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+      
         <h1 class="text-center">View Workout</h1>
         <p><strong>Date:</strong> {{ workout.date }}</p>
         <p><strong>Details:</strong> {{ workout.details }}</p>
