@@ -1,6 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 
-DB = "24_7_workout"
+DB = "Workout"
 
 def initialize_categories():
     categories = ["Strength", "Cardio", "Yoga"]
