@@ -5,7 +5,7 @@ from flask_app.models.user import User
 from flask import flash
 
 @app.route('/workout/add', methods=['POST'])
-def add_workout():
+def add_workout(): 
     if 'user_id' not in session:
         return redirect('/logout')
     

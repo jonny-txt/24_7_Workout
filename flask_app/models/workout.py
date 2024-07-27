@@ -19,6 +19,7 @@ class Workout:
 
     @classmethod 
     def save_workout(cls, data):
+        
         query = "INSERT INTO workouts (user_id, category_id, date, details, duration) VALUES (%(user_id)s, %(category_id)s, %(date)s, %(details)s, %(duration)s);"
         result = connectToMySQL(cls.DB).query_db(query, data)
         return result
