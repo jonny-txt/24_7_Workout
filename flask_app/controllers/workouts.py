@@ -3,7 +3,6 @@ from flask_app import app
 from flask_app.models.workout import Workout
 from flask_app.models.user import User
 from flask import flash
-
 @app.route('/workout/add', methods=['POST'])
 def add_workout():
     if 'user_id' not in session:
